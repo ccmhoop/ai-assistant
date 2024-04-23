@@ -2,12 +2,8 @@ import '../css/App.css'
 import { useState } from 'react';
 import FormSubmit from '../components/FormSubmit';
 
-
-// import FileLoader from '../components/FileLoader'
-
 export default function App() {
  
-
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState('');
   const [model, setModel] = useState('chadz');
