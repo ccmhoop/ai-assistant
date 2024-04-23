@@ -57,7 +57,7 @@ const aiChain = prompt.pipe(model);
 //## retrieve data ##-------------------------------------------------------------------------
 //###################
 
-export const handleSubmit = async (event, prompt, setResponse) => {
+export const llmSubmit = async (event, prompt, setResponse) => {
   event.preventDefault();
 
   const documents = await chromaDbChain.invoke({

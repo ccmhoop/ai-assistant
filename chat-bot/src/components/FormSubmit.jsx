@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import '../css/formSubmit.css'
-// import { handleSubmit } from '../helpers/handleSubmit';
 import DropMenu from '../components/DropMenu';
 import Stopwatch from '../components/Stopwatch'
-import {handleSubmit} from "../api/llm";
+import {llmSubmit} from "../api/llm";
 
 export default function FormSubmit({ prompt, model, loading, stopwatch, setPrompt, setModel, setResponse, setLoading, setStopwatch }) {
 
@@ -23,7 +22,7 @@ export default function FormSubmit({ prompt, model, loading, stopwatch, setPromp
         <form
             className='form-wrapper'
             // -> Warning Important! set this function correctly handleSubmit(event, prompt, model, setResponse, setLoading)
-            onSubmit={async (e) => { await handleSubmit(e,prompt,setResponse) }}>
+            onSubmit={async (e) => { await llmSubmit(e,prompt,setResponse) }}>
             <div className='user-submit-container'>
                 <div className='user-settings-container'>
                     <textarea
