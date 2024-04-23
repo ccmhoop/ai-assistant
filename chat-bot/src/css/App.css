@@ -1,0 +1,54 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.chat-bot-wrapper{
+  background-image: url("../images/chadz.png");
+  background-size:210%;
+  background-repeat: no-repeat;
+  background-position-x:-13em;
+  background-position-y: 2.4em;
+  height: 40vh;
+  width: 15vw;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.title{
+  background: linear-gradient(24deg, rgba(232,0,32,1) 0%, rgba(190,0,21,1) 75%, rgba(181,0,17,1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  font-style: italic;
+  font-size: xx-large;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 0%;
+  margin-top: 0%;
+ }
+
+ .ai-textarea{
+  margin-top: 1em;
+  background-color: #ebebebd0;
+  resize: none;
+  border-style: inset;
+  border-color: black;
+  border-width: 2px;
+  border-radius: .5em;
+  color: black;
+  font-style: italic;
+  font-size: small;
+  font-weight: bold;
+  height: 66%;
+  width: 90%;
+}
