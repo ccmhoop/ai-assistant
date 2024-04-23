@@ -11,14 +11,18 @@ const docs = await loader.load();
 
 // Create a text splitter for creating chunks
 const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize:1000,
+    chunkSize:200,
     separators: ['\n\n','\n',' ',''],
-    chunkOverlap: 200
+    chunkOverlap: 50
 });
 
 const splitDocument = await splitter.splitDocuments(docs);
 
 //--------------------------------- Save Collection ----------------------------------------
+
+//###################
+//##    Warning    ##----------process might take a while------------------------------------
+//###################
 
 const ollamaEmbeddings = new OllamaEmbeddings({
     baseUrl:"http://127.0.0.1:11434",
@@ -26,7 +30,7 @@ const ollamaEmbeddings = new OllamaEmbeddings({
 });
 
 const vectorStore = await Chroma.fromDocuments(splitDocument, ollamaEmbeddings, {
-    collectionName: "affectionate_hellman",
+    collectionName: "affectionate", // <------- collection name is needed for api check : -> src/api/llm.js
     url: "http://localhost:8000", 
 });
 

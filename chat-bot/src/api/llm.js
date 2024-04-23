@@ -26,7 +26,7 @@ const ollamaEmbeddings = new OllamaEmbeddings({
 //------------------------------------- Chroma DB Vector ----------------------------------
 
 const vectorStore = await Chroma.fromExistingCollection(ollamaEmbeddings, {
-  collectionName: "affectionate_hellman",
+  collectionName: "affectionate", 
   url: "http://localhost:8000",
 });
 
