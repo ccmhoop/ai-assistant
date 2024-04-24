@@ -11,7 +11,7 @@ export default function Stopwatch({ loading, stopwatch, setStopwatch }) {
   };
 
   const seconds = useRef(0);
-
+// bug fix timer
   useEffect(() => {
     let timer = null;
     if (loading) {
