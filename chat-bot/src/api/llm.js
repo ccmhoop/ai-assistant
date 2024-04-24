@@ -44,10 +44,11 @@ export const llmSubmit = async (
   system_prompt
 ) => {
   try {
+
   setLoading(true);
+
   //---------------------------------- Prompt Templates --------------------------------------
 
-  // You're Chadz , a joyfull Robot. You're a sheriff, only! Answer with a thick country accent,only! Anweser the user's questios ,only!"
   const aiInstructionTemplate = ChatPromptTemplate.fromTemplate(`
   ${system_prompt}
   Context : {context} 
@@ -89,4 +90,5 @@ export const llmSubmit = async (
   } finally {
     setLoading(false);
   }
+  //huge function ends <-
 }
