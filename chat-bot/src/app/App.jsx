@@ -6,7 +6,7 @@ import { personalities } from "../model/personalities";
 import FormUser from "../components/FormUser";
 
 export default function App() {
-  
+
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
@@ -15,9 +15,9 @@ export default function App() {
 
   return (
     <div className="chat-bot-wrapper">
-      <h1 className="title">Chadz Bot</h1>
+      <h1 className="title">Chadz Bot</h1>  
       <textarea
-        className="ai-textarea"
+        className="ai-textarea" // <- grid 2
         value={response}
         readOnly={true}
         placeholder=""
