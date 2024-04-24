@@ -4,10 +4,6 @@ import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
-
-function combineDocuments(docs) {
-  return docs.map((doc) => doc.pageContent).join("\n\n");
-}
 //------------------------------------- Model & Embbeding ----------------------------------
 
 const model = new Ollama({
@@ -26,53 +22,71 @@ const ollamaEmbeddings = new OllamaEmbeddings({
 //------------------------------------- Chroma DB Vector ----------------------------------
 
 const vectorStore = await Chroma.fromExistingCollection(ollamaEmbeddings, {
-  collectionName: "affectionate", 
+  collectionName: "affectionate_hellman",
   url: "http://localhost:8000",
 });
 
 const chromaRetriever = vectorStore.asRetriever();
 
-//---------------------------------- Prompt Templates --------------------------------------
-
-const prompt = ChatPromptTemplate.fromTemplate(`
-anweser the user's questios ,only.
-Context : {context} 
-Question : {input}
-`);
-
-const dbPrompt = PromptTemplate.fromTemplate(`
-For following user question convert it into a standalone question
-{userQuestion}`);
-
-//--------------------------------- db/ai chain----------------------------------------------
-
-const chromaDbChain = dbPrompt
-  .pipe(model)
-  .pipe(new StringOutputParser())
-  .pipe(chromaRetriever);
-
-const aiChain = prompt.pipe(model);
-
 //###################
-//## retrieve data ##-------------------------------------------------------------------------
+//##   api submit  ## ------------------------------------------------------------------------
 //###################
 
-export const llmSubmit = async (event, prompt, setResponse) => {
+function combineDocuments(docs) {
+  return docs.map((doc) => doc.pageContent).join("\n\n");
+}
+//huge function ->
+export const llmSubmit = async (
+  event,
+  prompt,
+  setResponse,
+  setLoading,
+  system_prompt
+) => {
+  try {
+  setLoading(true);
+  //---------------------------------- Prompt Templates --------------------------------------
+
+  // You're Chadz , a joyfull Robot. You're a sheriff, only! Answer with a thick country accent,only! Anweser the user's questios ,only!"
+  const aiInstructionTemplate = ChatPromptTemplate.fromTemplate(`
+  ${system_prompt}
+  Context : {context} 
+  Question : {input}
+  `);
+
+  const dbPrompt = PromptTemplate.fromTemplate(`
+  For following user question convert it into a standalone question
+  {userQuestion}`);
+
+  //--------------------------------- db/ai chain----------------------------------------------
+
+  const aiChain = aiInstructionTemplate.pipe(model);
+
+  const chromaDbChain = dbPrompt
+    .pipe(model)
+    .pipe(new StringOutputParser())
+    .pipe(chromaRetriever);
+
+  //###################
+  //## retrieve data ## -------------------------------------------------------------------------
+  //###################
+
   event.preventDefault();
+  setLoading(true);
+ 
+    const documents = await chromaDbChain.invoke({
+      userQuestion: prompt,
+    });
 
-  const documents = await chromaDbChain.invoke({
-    userQuestion: prompt,
-  });
+    const response = await aiChain.invoke({
+      input: prompt,
+      context: combineDocuments(documents),
+    });
 
-  const combinedDocs = combineDocuments(documents);
-
-  console.log("combinedDocs " + combinedDocs);
-
-  const response = await aiChain.invoke({
-    input: prompt,
-    context: combinedDocs,
-  });
-
-  setResponse(response);
-  console.log(response);
-};
+    setResponse(response);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
+}

@@ -9,19 +9,17 @@ const loader = new TextLoader("D:/projects/ai-assistant/chat-bot/src/chromadb/pe
 
 const docs = await loader.load();
 
-// Create a text splitter for creating chunks
+// Creates a text splitter for creating chunks these settings heavily influences the AI response 
 const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize:200,
+    chunkSize: 300,
     separators: ['\n\n','\n',' ',''],
-    chunkOverlap: 50
+    chunkOverlap: 100
 });
 
 const splitDocument = await splitter.splitDocuments(docs);
 
-//--------------------------------- Save Collection ----------------------------------------
-
 //###################
-//##    Warning    ##----------process might take a while------------------------------------
+//##    Warning    ##---------- Saving Collection ------- process might take a while --------
 //###################
 
 const ollamaEmbeddings = new OllamaEmbeddings({
@@ -30,13 +28,12 @@ const ollamaEmbeddings = new OllamaEmbeddings({
 });
 
 const vectorStore = await Chroma.fromDocuments(splitDocument, ollamaEmbeddings, {
-    collectionName: "affectionate", // <------- collection name is needed for api check : -> src/api/llm.js
+    collectionName: "affectionate", // <------- collection name is needed for api. check : -> src/api/llm.js
     url: "http://localhost:8000", 
 });
 
 //--------------------------------- Succes Check ------------------------------------------
 
-// Search for the most similar document
 const vectorStoreResponse = await vectorStore.similaritySearch("is peter pan in this document", 1);
 
 console.log("Printing docs after similarity search --> ",vectorStoreResponse);
