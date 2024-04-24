@@ -1,9 +1,0 @@
-Main(){
-    App(){
-        FormSubmit(prompt,model,loading,stopwatch,setPrompt,setModel,setResponse,setLoading,setStopwatch){   <- in development
-            DropMenu(model,setmodel)
-            Stopwatch(loading, stopwatch, setStopwatch )
-        }
-    }
-}
-

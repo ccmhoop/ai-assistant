@@ -1,11 +1,12 @@
 import "../css/App.css";
 import { useState } from "react";
-import FormSubmit from "../components/FormSubmit";
 import DropMenu from "../components/DropMenu";
 import Stopwatch from "../components/Stopwatch";
 import { personalities } from "../model/personalities";
+import FormUser from "../components/FormUser";
 
 export default function App() {
+  
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,7 @@ export default function App() {
         placeholder=""
       />
       <div className="app-grid-3">
-        <FormSubmit
+        <FormUser
           prompt={prompt}
           model={model}
           loading={loading}
@@ -46,8 +47,8 @@ export default function App() {
             stopwatch={stopwatch}
             setStopwatch={setStopwatch}
           />
-          <button className="submit-button" form="user-form" type="submit">
-           {loading? "loading":"submit"}
+          <button className="submit-button" form="form-user" type="submit">
+            {loading? "loading":"submit"}
           </button>
         </div>
       </div>

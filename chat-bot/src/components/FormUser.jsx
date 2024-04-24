@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import "../css/formSubmit.css";
 import { llmSubmit } from "../api/llm";
 
-export default function FormSubmit({
+export default function FormUser({
   prompt,
   model,
   setPrompt,
   setResponse,
   setLoading,
 }) {
-  FormSubmit.propTypes = {
+    FormUser.propTypes = {
     prompt: PropTypes.string,
     model: PropTypes.string,
     loading: PropTypes.bool,
@@ -20,7 +20,7 @@ export default function FormSubmit({
 
   return (
     <form
-      id={"user-form"}
+      id={"form-user"}
       className="form-wrapper"
       onSubmit={async (e) => {
         await llmSubmit(e, prompt, setResponse, setLoading, model);
