@@ -2,7 +2,6 @@ import '../css/stopwatch.css'
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 
-
 export default function Stopwatch({ loading, stopwatch, setStopwatch }) {
   
   Stopwatch.propTypes = {
@@ -28,5 +27,4 @@ export default function Stopwatch({ loading, stopwatch, setStopwatch }) {
   }, [loading, seconds, setStopwatch]);
 
   return (<div className='submit-stopwatch'>{stopwatch}</div>);
-
 }

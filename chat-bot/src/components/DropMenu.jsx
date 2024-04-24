@@ -21,7 +21,7 @@ export default function DropMenu({ model, setModel, personalityOne, personalityT
       <label>
         <select className="drop-menu" value={model} onChange={handleChange}>
           <option value={personalityOne}>Chadz</option>
-          <option value={personalityTwo}>liam</option>
+          <option value={personalityTwo}>Liam</option>
           <option value={personalityThree}>Mario</option>
           <option value={personalityFour}>Kier</option>
         </select>

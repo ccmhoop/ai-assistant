@@ -11,7 +11,7 @@ export default function FormSubmit({
 }) {
   FormSubmit.propTypes = {
     prompt: PropTypes.string,
-    model:  PropTypes.string,
+    model: PropTypes.string,
     loading: PropTypes.bool,
     setPrompt: PropTypes.func,
     setResponse: PropTypes.func,
@@ -20,10 +20,10 @@ export default function FormSubmit({
 
   return (
     <form
-    id={'user-form'}
+      id={"user-form"}
       className="form-wrapper"
       onSubmit={async (e) => {
-        await llmSubmit(e, prompt, setResponse, setLoading,model);
+        await llmSubmit(e, prompt, setResponse, setLoading, model);
       }}
     >
       <textarea

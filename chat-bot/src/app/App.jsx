@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormSubmit from "../components/FormSubmit";
 import DropMenu from "../components/DropMenu";
 import Stopwatch from "../components/Stopwatch";
-import {personalities}  from "../model/personalities";
+import { personalities } from "../model/personalities";
 
 export default function App() {
   const [prompt, setPrompt] = useState("");
@@ -11,7 +11,6 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [stopwatch, setStopwatch] = useState("0:00");
   const [model, setModel] = useState(personalities.chadz);
-
 
   return (
     <div className="chat-bot-wrapper">
@@ -22,30 +21,35 @@ export default function App() {
         readOnly={true}
         placeholder=""
       />
-      <FormSubmit
-        prompt={prompt}
-        model={model}
-        loading={loading}
-        setPrompt={setPrompt}
-        setResponse={setResponse}
-        setLoading={setLoading}
-      />
-      <div className="user-settings"> 
-      <DropMenu 
-        model={model} 
-        setModel={setModel} 
-        personalityOne={personalities.chadz}
-        personalityTwo={personalities.liam}
-        personalityThree={personalities.mario}
-        personalityFour={personalities.kier}
-
+      <div className="app-grid-3">
+        <FormSubmit
+          prompt={prompt}
+          model={model}
+          loading={loading}
+          setPrompt={setPrompt}
+          setResponse={setResponse}
+          setLoading={setLoading}
         />
-      <Stopwatch
-        loading={loading}
-        stopwatch={stopwatch}
-        setStopwatch={setStopwatch}
-      />
-      <button form='user-form' type="submit">click</button>
+      </div>
+      <div className="app-grid-4">
+        <DropMenu
+          model={model}
+          setModel={setModel}
+          personalityOne={personalities.chadz}
+          personalityTwo={personalities.liam}
+          personalityThree={personalities.mario}
+          personalityFour={personalities.kier}
+        />
+        <div className="submit-stopwatch-container">
+          <Stopwatch
+            loading={loading}
+            stopwatch={stopwatch}
+            setStopwatch={setStopwatch}
+          />
+          <button className="submit-button" form="user-form" type="submit">
+           {loading? "loading":"submit"}
+          </button>
+        </div>
       </div>
     </div>
   );

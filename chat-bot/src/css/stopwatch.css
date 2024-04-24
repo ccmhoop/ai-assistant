@@ -1,8 +1,12 @@
 .submit-stopwatch {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: large;
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  font-size: medium;
   border-style: inset;
   border-color: white;
+  border-width: 2px;
   border-radius: .3em;
   display: flex;
   align-items: center;
@@ -10,7 +14,6 @@
   background: linear-gradient(24deg, rgba(232, 0, 32, 1) 0%, rgba(190, 0, 21, 1) 75%, rgba(181, 0, 17, 1) 100%);
   font-weight: 900;
   color: white;
-  width: 70%;
-  height: 80%;
-  margin: auto;
+  width: 95%;
+  height: 30%;
 }
