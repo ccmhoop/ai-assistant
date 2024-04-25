@@ -4,14 +4,14 @@ import { llmSubmit } from "../api/llm";
 
 export default function FormUser({
   prompt,
-  model,
+  systemPrompt,
   setPrompt,
   setResponse,
   setLoading,
 }) {
     FormUser.propTypes = {
     prompt: PropTypes.string,
-    model: PropTypes.string,
+    systemPrompt: PropTypes.string,
     loading: PropTypes.bool,
     setPrompt: PropTypes.func,
     setResponse: PropTypes.func,
@@ -23,7 +23,7 @@ export default function FormUser({
       id={"form-user"}
       className="form-wrapper"
       onSubmit={async (e) => {
-        await llmSubmit(e, prompt, setResponse, setLoading, model);
+        await llmSubmit(e, prompt, setResponse, setLoading, systemPrompt);
       }}
     >
       <textarea

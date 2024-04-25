@@ -2,7 +2,7 @@ import "../css/App.css";
 import { useState } from "react";
 import DropMenu from "../components/DropMenu";
 import Stopwatch from "../components/Stopwatch";
-import { personalities } from "../model/personalities";
+import { systemPrompts } from "../model/systemPrompts";
 import FormUser from "../components/FormUser";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [stopwatch, setStopwatch] = useState("0:00");
-  const [model, setModel] = useState(personalities.chadz);
+  const [systemPrompt, setSystemPrompt] = useState(systemPrompts.chadz);
 
   return (
     <div className="chat-bot-wrapper">
@@ -25,7 +25,7 @@ export default function App() {
       <div className="app-grid-3">
         <FormUser
           prompt={prompt}
-          model={model}
+          systemPrompt={systemPrompt}
           loading={loading}
           setPrompt={setPrompt}
           setResponse={setResponse}
@@ -34,12 +34,12 @@ export default function App() {
       </div>
       <div className="app-grid-4">
         <DropMenu
-          model={model}
-          setModel={setModel}
-          personalityOne={personalities.chadz}
-          personalityTwo={personalities.liam}
-          personalityThree={personalities.mario}
-          personalityFour={personalities.kier}
+          systemPrompt={systemPrompt}
+          setSystemPrompt={setSystemPrompt}
+          optionOne={systemPrompts.chadz}
+          optionTwo={systemPrompts.liam}
+          optionThree={systemPrompts.mario}
+          optionFour={systemPrompts.kier}
         />
         <div className="submit-stopwatch-container">
           <Stopwatch
