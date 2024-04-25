@@ -10,7 +10,7 @@ import { Chroma } from "@langchain/community/vectorstores/chroma";
 const model = new Ollama({
   baseUrl: "http://127.0.0.1:11434",
   model: "mistral",
-  temperature: 0.5,
+  temperature: 1,
   maxTokens: 100,
 });
 

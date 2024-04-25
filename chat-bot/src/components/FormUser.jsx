@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "../css/formSubmit.css";
+import "../css/formUser.css";
 import { llmSubmit } from "../api/llm";
 
 export default function FormUser({
@@ -9,7 +9,7 @@ export default function FormUser({
   setResponse,
   setLoading,
 }) {
-    FormUser.propTypes = {
+  FormUser.propTypes = {
     prompt: PropTypes.string,
     systemPrompt: PropTypes.string,
     loading: PropTypes.bool,
@@ -33,5 +33,5 @@ export default function FormUser({
         placeholder="Ask for anything!"
       />
     </form>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import '../css/settings.css'
+import '../css/dropMenu.css'
 
 export default function DropMenu({ systemPrompt, setSystemPrompt, optionOne, optionTwo, optionThree, optionFour }) {
 
@@ -27,5 +27,5 @@ export default function DropMenu({ systemPrompt, setSystemPrompt, optionOne, opt
         </select>
       </label>
     </div>
-  );
+  )
 }
