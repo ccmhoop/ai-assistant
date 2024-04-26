@@ -10,7 +10,7 @@ import { Chroma } from "@langchain/community/vectorstores/chroma";
 const model = new Ollama({
   baseUrl: "http://127.0.0.1:11434",
   model: "mistral",
-  temperature: 1,
+  temperature: 0,
   maxTokens: 100,
 });
 
@@ -35,6 +35,7 @@ const chromaRetriever = vectorStore.asRetriever();
 function combineDocuments(docs) {
   return docs.map((doc) => doc.pageContent).join("\n\n");
 }
+
 //huge function ->
 export const llmSubmit = async (
   event,

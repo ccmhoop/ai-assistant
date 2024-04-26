@@ -1,13 +1,15 @@
-import "../css/stopwatch.css";
 import PropTypes from "prop-types";
-import { useEffect, useRef } from "react";
+import "../css/smallComponents.css";
+import { useEffect, useRef, useState } from "react";
 
-export default function Stopwatch({ loading, stopwatch, setStopwatch }) {
+export default function Stopwatch({ loading }) {
   Stopwatch.propTypes = {
     loading: PropTypes.bool,
     stopwatch: PropTypes.string,
     setStopwatch: PropTypes.func,
   };
+
+  const [stopwatch, setStopwatch] = useState("0:00");
 
   const seconds = useRef(0);
 
@@ -27,7 +29,7 @@ export default function Stopwatch({ loading, stopwatch, setStopwatch }) {
     return () => {
       seconds.current = 0;
       clearInterval(timer);
-    }
+    };
   }, [loading, seconds, setStopwatch]);
 
   return <div className="submit-stopwatch">{stopwatch}</div>;

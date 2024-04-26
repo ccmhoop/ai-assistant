@@ -1,22 +1,17 @@
 import PropTypes from "prop-types";
 import "../css/formUser.css";
 import { llmSubmit } from "../api/llm";
+import { useState } from "react";
 
-export default function FormUser({
-  prompt,
-  systemPrompt,
-  setPrompt,
-  setResponse,
-  setLoading,
-}) {
+export default function FormUser({systemPrompt, setResponse, setLoading,}) {
+  
   FormUser.propTypes = {
-    prompt: PropTypes.string,
     systemPrompt: PropTypes.string,
-    loading: PropTypes.bool,
-    setPrompt: PropTypes.func,
     setResponse: PropTypes.func,
     setLoading: PropTypes.func,
   };
+  
+  const [prompt, setPrompt] = useState("");
 
   return (
     <form
