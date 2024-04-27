@@ -1,11 +1,9 @@
-import PropTypes from "prop-types";
 import "../css/formUser.css";
 import { llmSubmit } from "../api/llm";
 import { LlmContext } from "../app/App";
 import { useContext, useState } from "react";
 
 export default function FormUser() {
- 
   const llmValues = useContext(LlmContext);
   const [prompt, setPrompt] = useState("");
 

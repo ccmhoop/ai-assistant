@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { SettingsContext } from "../app/App";
 
 export default function DropMenu() {
-  
  const [systemPrompt,setSystemPrompt] = useContext(SettingsContext).dropMenu;
 
   const handleChange = (event) => {

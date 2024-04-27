@@ -3,11 +3,8 @@ import { useEffect, useRef, useState, useContext } from "react";
 import { LoadingContext } from "../app/App";
 
 export default function Timer() {
-
-  const [stopwatch, setStopwatch] = useState("0:00");
-
+  const [clock, setClock] = useState("0:00");
   const loading = useContext(LoadingContext);
-
   const seconds = useRef(0);
 
   useEffect(() => {
@@ -15,7 +12,7 @@ export default function Timer() {
     if (loading) {
       timer = setInterval(() => {
         seconds.current += 1;
-        setStopwatch(
+        setClock(
           Math.floor(seconds.current / 60).toFixed(0) +
             ":" +
             (seconds.current % 60 < 10 ? "0" : "") +
@@ -27,7 +24,7 @@ export default function Timer() {
       seconds.current = 0;
       clearInterval(timer);
     };
-  }, [loading, seconds, setStopwatch]);
+  }, [loading, seconds, setClock]);
 
-  return <div className="timer">{stopwatch}</div>;
+  return <div className="timer">{clock}</div>;
 }
