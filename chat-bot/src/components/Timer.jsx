@@ -1,15 +1,12 @@
-import PropTypes from "prop-types";
 import "../css/smallComponents.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { LoadingContext } from "../app/App";
 
-export default function Stopwatch({ loading }) {
-  Stopwatch.propTypes = {
-    loading: PropTypes.bool,
-    stopwatch: PropTypes.string,
-    setStopwatch: PropTypes.func,
-  };
+export default function Timer() {
 
   const [stopwatch, setStopwatch] = useState("0:00");
+
+  const loading = useContext(LoadingContext);
 
   const seconds = useRef(0);
 
@@ -32,5 +29,5 @@ export default function Stopwatch({ loading }) {
     };
   }, [loading, seconds, setStopwatch]);
 
-  return <div className="submit-stopwatch">{stopwatch}</div>;
+  return <div className="timer">{stopwatch}</div>;
 }

@@ -1,31 +1,30 @@
-import PropTypes from "prop-types";
-import '../css/dropMenu.css'
+import "../css/dropMenu.css";
+import { systemPrompts } from "../model/systemPrompts";
+import { useContext } from "react";
+import { SettingsContext } from "../app/App";
 
-export default function DropMenu({ systemPrompt, setSystemPrompt, optionOne, optionTwo, optionThree, optionFour }) {
-
-  DropMenu.propTypes = {
-    systemPrompt: PropTypes.string,
-    setSystemPrompt: PropTypes.func,
-    optionOne: PropTypes.string,
-    optionTwo: PropTypes.string,
-    optionThree: PropTypes.string,
-    optionFour: PropTypes.string,
-  };
+export default function DropMenu() {
+  
+ const [systemPrompt,setSystemPrompt] = useContext(SettingsContext).dropMenu;
 
   const handleChange = (event) => {
-    setSystemPrompt(event.target.value);
-  }
-  
+  setSystemPrompt(event.target.value);
+  };
+
   return (
     <div className="dropMenu-wrapper">
       <label>
-        <select className="drop-menu" value={systemPrompt} onChange={handleChange}>
-          <option value={optionOne}>Chadz</option>
-          <option value={optionTwo}>Liam</option>
-          <option value={optionThree}>Mario</option>
-          <option value={optionFour}>Kier</option>
+        <select
+          className="drop-menu"
+          value={systemPrompt}
+          onChange={handleChange}
+        >
+          <option value={systemPrompts.chadz}>Chadz</option>
+          <option value={systemPrompts.liam}>Liam</option>
+          <option value={systemPrompts.mario}>Mario</option>
+          <option value={systemPrompts.kier}>Kier</option>
         </select>
       </label>
     </div>
-  )
+  );
 }

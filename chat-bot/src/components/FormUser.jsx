@@ -1,16 +1,12 @@
 import PropTypes from "prop-types";
 import "../css/formUser.css";
 import { llmSubmit } from "../api/llm";
-import { useState } from "react";
+import { LlmContext } from "../app/App";
+import { useContext, useState } from "react";
 
-export default function FormUser({systemPrompt, setResponse, setLoading,}) {
-  
-  FormUser.propTypes = {
-    systemPrompt: PropTypes.string,
-    setResponse: PropTypes.func,
-    setLoading: PropTypes.func,
-  };
-  
+export default function FormUser() {
+ 
+  const llmValues = useContext(LlmContext);
   const [prompt, setPrompt] = useState("");
 
   return (
@@ -18,7 +14,7 @@ export default function FormUser({systemPrompt, setResponse, setLoading,}) {
       id={"form-user"}
       className="form-wrapper"
       onSubmit={async (e) => {
-        await llmSubmit(e, prompt, setResponse, setLoading, systemPrompt);
+        await llmSubmit(e, llmValues.prompt, llmValues.setResponse, llmValues.setLoading, llmValues.systemPrompt);
       }}
     >
       <textarea
@@ -28,5 +24,5 @@ export default function FormUser({systemPrompt, setResponse, setLoading,}) {
         placeholder="Ask for anything!"
       />
     </form>
-  )
+  );
 }

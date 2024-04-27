@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
 import "../css/smallComponents.css";
+import { LlmContext } from "../app/App";
+import { useContext } from "react";
 
-export default function AiTextArea({ response }) {
-  AiTextArea.propTypes = {
-    response: PropTypes.string,
-  };
+export default function AiTextArea() {
+
+  const response = useContext(LlmContext).response;
 
   return (
     <textarea

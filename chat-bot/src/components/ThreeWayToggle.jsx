@@ -1,12 +1,10 @@
-import PropTypes from "prop-types";
 import "../css/threeWayToggle.css"; // Import your CSS file
+import { SettingsContext } from "../app/App";
+import { useContext } from "react";
 
-export default function ThreeWayToggle({ temprature, setTemprature }) {
-  
-  ThreeWayToggle.propTypes = {
-    setTemprature: PropTypes.func,
-    temprature: PropTypes.string
-  };
+export default function ThreeWayToggle() {
+
+  const [temprature, setTemprature] = useContext(SettingsContext).threeWayToggle;
 
   const handleToggle = () => {
     const options = ["option 1", "option 2", "option 3"];
@@ -20,8 +18,7 @@ export default function ThreeWayToggle({ temprature, setTemprature }) {
       <button
         className={`option ${temprature.toLowerCase().replace(" ", "-")}`}
         onClick={handleToggle}
-      >
-      </button>
+      ></button>
     </div>
   );
 }
