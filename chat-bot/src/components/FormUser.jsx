@@ -11,8 +11,8 @@ export default function FormUser() {
     <form
       id={"form-user"}
       className="form-wrapper"
-      onSubmit={async (e) => {
-        await llmSubmit(e, llmValues.prompt, llmValues.setResponse, llmValues.setLoading, llmValues.systemPrompt);
+      onSubmit={async (e) => { //info gets sends to backend
+        await llmSubmit(e, prompt, llmValues.setResponse, llmValues.setLoading, llmValues.systemPrompt);
       }}
     >
       <textarea
