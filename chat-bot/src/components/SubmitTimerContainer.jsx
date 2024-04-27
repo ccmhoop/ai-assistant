@@ -4,7 +4,6 @@ import { LoadingContext } from "../app/App";
 import { useContext } from "react";
 
 export default function SubmitTimerContainer() {
-
   return (
     <div className="submit-stopwatch-container">
       <Timer/>
