@@ -11,7 +11,7 @@ export default function FormUser() {
     <form
       id={"form-user"}
       className="form-wrapper"
-      onSubmit={async (e) => { //info gets sends to backend
+      onSubmit={async (e) => { // -> src/api/llm.js
         await llmSubmit(e, prompt, llmValues.setResponse, llmValues.setLoading, llmValues.systemPrompt);
       }}
     >

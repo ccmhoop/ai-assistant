@@ -3,7 +3,8 @@ import { SettingsContext } from "../app/App";
 import { useContext } from "react";
 
 export default function ThreeWayToggle() {
-  const [temprature, setTemprature] = useContext(SettingsContext).threeWayToggle;
+  const [temprature, setTemprature] =
+    useContext(SettingsContext).threeWayToggle;
 
   const handleToggle = () => {
     const options = ["option 1", "option 2", "option 3"];
