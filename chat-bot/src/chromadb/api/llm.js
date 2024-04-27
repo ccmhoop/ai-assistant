@@ -1,7 +1,7 @@
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { PromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
-import { ollamaEmbeddings, ollamaModel } from "../chromadb/chromaConstants";
+import { ollamaEmbeddings, ollamaModel } from "../chromaConstants";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 
 
@@ -45,8 +45,6 @@ export const llmSubmit = async (
     Context : {context} 
     Question : {input}
   `);
-
-
 
     //--------------------------------- db/ai chain----------------------------------------------
 
