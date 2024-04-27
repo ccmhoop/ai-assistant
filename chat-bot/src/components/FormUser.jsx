@@ -21,6 +21,7 @@ export default function FormUser() {
         onChange={(e) => setPrompt(e.target.value)}
         placeholder="Ask for anything!"
       />
+      
     </form>
   );
 }
