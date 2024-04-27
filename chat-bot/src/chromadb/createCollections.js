@@ -1,4 +1,4 @@
-import {OllamaEmbeddings} from "@langchain/community/embeddings/ollama"
+import { ollamaEmbeddings } from "./chromaConstants";
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { TextLoader } from "langchain/document_loaders/fs/text";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
@@ -21,11 +21,6 @@ const splitDocument = await splitter.splitDocuments(docs);
 //###################
 //##    Warning    ##---------- Saving Collection ------- process might take a while --------
 //###################
-
-const ollamaEmbeddings = new OllamaEmbeddings({
-    baseUrl:"http://127.0.0.1:11434",
-    model:"mistral"
-});
 
 const vectorStore = await Chroma.fromDocuments(splitDocument, ollamaEmbeddings, {
     collectionName: "affectionate", // <------- collection name is needed for api. check : -> src/api/llm.js
