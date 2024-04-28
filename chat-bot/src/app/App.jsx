@@ -6,7 +6,6 @@ import AiText from "../components/AiText";
 
 
 export const LlmContext = createContext();
-export const SettingsContext = createContext();
 export const LoadingContext = createContext();
 
 export default function App() {
