@@ -1,5 +1,5 @@
 import "../css/formUser.css";
-import { llmSubmit } from "../chromadb/api/llm";
+import { llmSubmit } from "../llm/llmApi";
 import { LlmContext } from "../app/App";
 import { useContext, useState } from "react";
 
@@ -11,8 +11,8 @@ export default function FormUser() {
     <form
       id={"form-user"}
       className="form-wrapper"
-      onSubmit={async (e) => { // -> src/api/llm.js
-        await llmSubmit(e, prompt, llmValues.setResponse, llmValues.setLoading, llmValues.systemPrompt);
+      onSubmit={async (e) => { // -> src/chromaDB/api/llm.js
+        await llmSubmit(e, prompt, llmValues.setResponse, llmValues.setLoading);
       }}
     >
       <textarea
@@ -21,7 +21,6 @@ export default function FormUser() {
         onChange={(e) => setPrompt(e.target.value)}
         placeholder="Ask for anything!"
       />
-      
     </form>
   );
 }

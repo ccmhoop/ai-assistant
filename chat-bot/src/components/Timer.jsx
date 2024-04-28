@@ -1,4 +1,4 @@
-import "../css/smallComponents.css";
+import "../css/submitTimer.css";
 import { useEffect, useRef, useState, useContext } from "react";
 import { LoadingContext } from "../app/App";
 

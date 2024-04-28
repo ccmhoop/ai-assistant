@@ -6,14 +6,16 @@
 
 .chat-bot-wrapper{
   display: grid;
-  grid-template-rows: 10% 56% 12% 12%;
+  grid-template-rows: 10% 57% 25%;
   grid-template-columns: 100% ;
   background-image: url("../images/chadz.png");
+  background-attachment: fixed;
+  background-position: center; 
   background-color: red;
-  background-size:150%;
+  background-size: 27%;
   background-repeat: no-repeat;
-  background-position-x:-5em;
-  background-position-y: 1.6em;
+  background-position-x: 42em;
+  background-position-y: 22.5em;
   height: 40vh;
   width: 15vw;
   border-top-left-radius: 1em;
@@ -22,7 +24,7 @@
   align-items: center;
   justify-content: start;
   justify-items: center;
-  row-gap: .5em;
+  row-gap: .8em;
 }
 
 .app-grid-1{
@@ -50,40 +52,11 @@
 }
 
 .app-grid-3{
-  height: 100%;
-  width: 90%;
-}
-
-.app-grid-4{
   display: flex;
   flex-direction: row;
-  grid-row: 4;
-  align-items: start;
+  grid-row: 3;
+  align-items: center;
   justify-content: space-between;
-  width: 90%;
   height:100%;
-}
-.submit-stopwatch-container{
-  height: 95%;
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.submit-button {
-  background: linear-gradient(24deg, rgba(232, 0, 32, 1) 0%, rgba(190, 0, 21, 1) 90%, rgba(181, 0, 17, 1) 100%);
-  height: 60%;
-  width:  100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  /* text-align: center; */
-  font-weight: 700;
-  font-style: italic;
-  font-size: small;
-  border-width: 2px;
-  border-color: white;
-  border-style: none;
+  width: 90%;
 }

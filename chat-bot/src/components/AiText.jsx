@@ -1,8 +1,8 @@
-import "../css/smallComponents.css";
+import "../css/aiText.css"
 import { LlmContext } from "../app/App";
 import { useContext } from "react";
 
-export default function AiTextArea() {
+export default function AiText() {
   return (
     <textarea
       className="ai-textarea" // <- grid 2

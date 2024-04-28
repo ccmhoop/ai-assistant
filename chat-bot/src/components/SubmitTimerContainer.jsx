@@ -1,5 +1,5 @@
 import Timer from "./Timer";
-import "../css/App.css";
+import "../css/submitTimer.css";
 import { LoadingContext } from "../app/App";
 import { useContext } from "react";
 

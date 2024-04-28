@@ -1,11 +1,11 @@
 .form-wrapper {
-    height: 100%;
-    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-}
+    height: 100%;
+    width: 65%;
+    }
 
 .user-textarea {
     background-color: rgba(255, 255, 255, 0.941);
