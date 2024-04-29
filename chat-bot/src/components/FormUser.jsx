@@ -1,5 +1,5 @@
 import "../css/formUser.css";
-import { llmSubmit } from "../llm/llmApi";
+import { llmSubmit } from "../llm/api";
 import { LlmContext } from "../app/App";
 import { useContext, useState } from "react";
 
