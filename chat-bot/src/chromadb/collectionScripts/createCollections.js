@@ -30,6 +30,9 @@ const splitDocument = await splitter.splitDocuments(docs);
 const vectorStore = await Chroma.fromDocuments(splitDocument, ollamaEmbeddings, {
     collectionName: "webdev", // <------- collection name is needed for api. check : -> src/api/llm.js
     url: "http://localhost:8000", 
+    collectionMetadata: {
+        "hnsw:space": "cosine",
+      },
 });
 
 //--------------------------------- Succes Check ------------------------------------------

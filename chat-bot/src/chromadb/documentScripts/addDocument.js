@@ -27,7 +27,7 @@ const textSplitter = new RecursiveCharacterTextSplitter({
   
 const document = await textSplitter.splitDocuments(documents);
 
-const collection = await client.getCollection({ name: "affectionate" });
+const collection = await client.getCollection({ name: "webdev" });
 
 
 await collection.add({

@@ -6,7 +6,7 @@
 
 .chat-bot-wrapper{
   display: grid;
-  grid-template-rows: 10% 57% 25%;
+  grid-template-rows: 14% 50% 20%;
   grid-template-columns: 100% ;
   background-image: url("../images/chadz.png");
   background-attachment: fixed;
@@ -14,8 +14,8 @@
   background-color: red;
   background-size: 27%;
   background-repeat: no-repeat;
-  background-position-x: 42em;
-  background-position-y: 22.5em;
+  background-position-x: 34em;
+  background-position-y: 15em;
   height: 40vh;
   width: 15vw;
   border-top-left-radius: 1em;
