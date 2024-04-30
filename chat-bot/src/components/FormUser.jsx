@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { LoadingContext } from "../app/App";
 import axios from "axios";
+import "../css/formUser.css";
 
 export default function FormUser() {
   const llmValues = useContext(LoadingContext);

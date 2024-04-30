@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .timer{
@@ -17,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(24deg, rgba(232, 0, 32, 1) 0%, rgba(190, 0, 21, 1) 75%, rgba(181, 0, 17, 1) 100%);
+    background: rgb(36, 36, 36);
     font-weight: 900;
     color: white;
     width: 95%;
@@ -25,7 +26,7 @@
   }
 
 .submit-button {
-  background: linear-gradient(24deg, rgba(232, 0, 32, 1) 0%, rgba(190, 0, 21, 1) 90%, rgba(181, 0, 17, 1) 100%);
+  background: rgb(36, 36, 36);
   height: 60%;
   width:  100%;
   display: flex;

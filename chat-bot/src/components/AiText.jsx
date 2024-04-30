@@ -6,7 +6,7 @@ export default function AiText() {
   return (
     <textarea
       className="ai-textarea" // <- grid 2
-      value={useContext(LoadingContext).response}
+      value={useContext(LoadingContext).response.trim()}
       readOnly={true}
       placeholder=""
     />
