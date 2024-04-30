@@ -18,6 +18,7 @@ try {
       model: "mistral",
       prompt: text,
     });
+    
     const embedding = response.embedding;
 
     await collection.add({
