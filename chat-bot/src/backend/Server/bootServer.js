@@ -35,8 +35,9 @@ const generateResponse = async (prompt, embedding) => {
     nResults: 1,
   });
   const generatedOutput = await ollama.generate({
-    model: "mistral",
+    model: "phi",
     prompt: `Using this data: ${results.documents}. Respond to this prompt: ${prompt}`,
+
   });
   return generatedOutput.response;
 };
@@ -50,7 +51,7 @@ const server = http.createServer(async (req, res) => {
         const { prompt } = JSON.parse(body);
         const response = await ollama.embeddings({
           prompt: prompt,
-          model: "mistral",
+          model: "phi",
         });
         const generatedResponse = await generateResponse(
           prompt,

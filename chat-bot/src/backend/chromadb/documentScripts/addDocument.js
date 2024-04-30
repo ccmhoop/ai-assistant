@@ -15,7 +15,7 @@ try {
     const text = fs.readFileSync(fileName, "utf-8");
 
     const response = await ollama.embeddings({
-      model: "mistral",
+      model: "phi",
       prompt: text,
     });
     

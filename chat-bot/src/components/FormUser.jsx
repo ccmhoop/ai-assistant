@@ -11,7 +11,7 @@ export default function FormUser() {
     llmValues.setLoading(true);
     try {
       const response = await axios.post("http://localhost:3000/api/generate", {
-        model: "mistral",
+        model: "phi",
         prompt,
       });
       console.log(response);
