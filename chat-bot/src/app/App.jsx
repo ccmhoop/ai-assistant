@@ -4,7 +4,6 @@ import FormUser from "../components/FormUser";
 import SubmitTimerContainer from "../components/SubmitTimerContainer";
 import AiText from "../components/AiText";
 
-export const LlmContext = createContext();
 export const LoadingContext = createContext();
 
 export default function App() {
@@ -14,17 +13,15 @@ export default function App() {
   return (
     <div className="chat-bot-wrapper">
       <h1 className="app-grid-1">Chadz Bot</h1>
-      <LlmContext.Provider value={{ response, setResponse, setLoading }}>
+      <LoadingContext.Provider value={{ response, loading, setResponse, setLoading }}>
         <div className="app-grid-2">
-          <AiText/> 
+          <AiText />
         </div>
         <div className="app-grid-3">
           <FormUser />
-          <LoadingContext.Provider value={loading}>
-            <SubmitTimerContainer />
-          </LoadingContext.Provider>
+          <SubmitTimerContainer />
         </div>
-      </LlmContext.Provider>
+      </LoadingContext.Provider>
     </div>
   );
 }

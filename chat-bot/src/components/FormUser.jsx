@@ -1,20 +1,30 @@
-import "../css/formUser.css";
-import { llmSubmit } from "../llm/api";
-import { LlmContext } from "../app/App";
 import { useContext, useState } from "react";
+import { LoadingContext } from "../app/App";
+import axios from "axios";
 
 export default function FormUser() {
-  const llmValues = useContext(LlmContext);
+  const llmValues = useContext(LoadingContext);
   const [prompt, setPrompt] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    llmValues.setLoading(true);
+    try {
+      const response = await axios.post("http://localhost:3000/api/generate", {
+        model: "mistral",
+        prompt,
+      });
+      console.log(response);
+      llmValues.setResponse(response.data.response);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      llmValues.setLoading(false);
+    }
+  };
+
   return (
-    <form
-      id={"form-user"}
-      className="form-wrapper"
-      onSubmit={async (e) => { // -> src/chromaDB/api/llm.js
-        await llmSubmit(e, prompt, llmValues.setResponse, llmValues.setLoading);
-      }}
-    >
+    <form id="form-user" className="form-wrapper" onSubmit={handleSubmit}>
       <textarea
         className="user-textarea"
         value={prompt}

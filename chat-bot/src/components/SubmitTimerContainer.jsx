@@ -9,11 +9,11 @@ export default function SubmitTimerContainer() {
       <Timer/>
       <button
         className="submit-button"
-        disabled={useContext(LoadingContext)}
+        disabled={useContext(LoadingContext).loading}
         form="form-user"
         type="submit"
       >
-        {useContext(LoadingContext)? "loading" : "submit"}
+        {useContext(LoadingContext).loading? "loading" : "submit"}
       </button>
     </div>
   );

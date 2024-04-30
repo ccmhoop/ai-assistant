@@ -4,7 +4,7 @@ import { LoadingContext } from "../app/App";
 
 export default function Timer() {
   const [clock, setClock] = useState("0:00");
-  const loading = useContext(LoadingContext);
+  const loading = useContext(LoadingContext).loading;
   const seconds = useRef(0);
 
   useEffect(() => {
