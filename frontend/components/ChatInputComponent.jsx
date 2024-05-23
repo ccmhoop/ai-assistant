@@ -65,11 +65,10 @@ export default function ChatInputComponent() {
         placeholder="Ask for anything!"
       />
       <button
-        className="submit-button"
+        className= {`submit-button ${prompt.trim().length !== 0? "submit-button-active":""}`}
         disabled={loading}
         onClick={handleSubmit}
       >
-        {loading ? "..." : "send"}
       </button>
     </div>
   );

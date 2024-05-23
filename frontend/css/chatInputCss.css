@@ -1,36 +1,32 @@
-.buttons-textarea-container{
+.buttons-textarea-container {
     margin-top: auto;
     display: flex;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     flex-direction: row;
     font-size: 1em;
     border-style: hidden;
     outline: none;
     resize: none;
-    width:32%;
-    border-radius: 2rem;
-    background-color: rgb(228, 227, 227);
-    padding: .5em;
+    width: 33%;
+    border-radius: 1.8rem;
+    background-color: rgb(243, 243, 243);
+    padding: .2em;
     overflow: hidden;
     bottom: 0;
 }
 
-.document-button{
-    background: rgb(36, 36, 36);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4em;
-    height: 4em;
-    color: white;
-    border-radius: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-style: italic;
-    font-size: x-small;
-    border-color: white;
+.document-button {
     border-style: none;
+    background-color: transparent;
+    background-image: url("../images/paperclip.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 100%;
+    font-weight: 500;
     margin-top: auto;
     margin-right: auto;
 }
@@ -42,30 +38,35 @@
     outline: none;
     resize: none;
     width: 90%;
-    max-height: 30em;
+    max-height: 10em;
     background-color: transparent;
-    display: flex; 
-    margin-top: .3em; 
+    display: flex;
+    margin-top: .3em;
     overflow-y: scroll;
+    overflow-anchor: none;
 }
 
 .submit-button {
-    background: rgb(36, 36, 36);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4em;
-    height: 4em;
-    color: white;
-    border-radius: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-style: italic;
-    font-size: x-small;
-    border-color: white;
+    background-color: white;
+    background-color: transparent;
+    background-image: url("../images/enterIcon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-style: none;
+    opacity: 0.2;
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    font-weight: 500;
     margin-left: auto;
     margin-top: auto;
-  }
-  
+    margin-right: .3em;
+    margin-bottom: .3em;
+}
 
+.submit-button-active{
+    
+    opacity: 1;
+
+}
