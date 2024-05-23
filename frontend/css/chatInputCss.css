@@ -1,0 +1,71 @@
+.buttons-textarea-container{
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction: row;
+    font-size: 1em;
+    border-style: hidden;
+    outline: none;
+    resize: none;
+    width:32%;
+    border-radius: 2rem;
+    background-color: rgb(228, 227, 227);
+    padding: .5em;
+    overflow: hidden;
+    bottom: 0;
+}
+
+.document-button{
+    background: rgb(36, 36, 36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4em;
+    height: 4em;
+    color: white;
+    border-radius: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    font-size: x-small;
+    border-color: white;
+    border-style: none;
+    margin-top: auto;
+    margin-right: auto;
+}
+
+.user-textarea {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    border-style: hidden;
+    outline: none;
+    resize: none;
+    width: 90%;
+    max-height: 30em;
+    background-color: transparent;
+    display: flex; 
+    margin-top: .3em; 
+    overflow-y: scroll;
+}
+
+.submit-button {
+    background: rgb(36, 36, 36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4em;
+    height: 4em;
+    color: white;
+    border-radius: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    font-size: x-small;
+    border-color: white;
+    border-style: none;
+    margin-left: auto;
+    margin-top: auto;
+  }
+  
+
