@@ -1,0 +1,45 @@
+=====================
+Chat-History :{ 
+=====================
+
+    ------------------------------------------ Todo --------------------------------------------------------
+    
+    function(css chathistory-container : overflow-Y)-> {
+        1 : When a new message appears the page autoscrolls to the newest message
+    }instructions{
+        1 : https://stackoverflow.com/questions/70399819/how-to-auto-scroll-down-when-new-messages-added
+    }done{
+        1 : not started
+    }
+    
+    -------------------------------------- Fixed Bugs -------------------------------------------------------
+    
+    bug (css chat-message : words don't break/wrap when overflow-x )-> {
+        1 : Visual Bug Chat history box overflows Example : [aaaaaaaaaaaa]aaaaaaaa
+    }fix{
+        1 : fix overflow-x so that it properly wraps
+    }done{
+        1 : fixed;       
+    }
+
+=====================
+Chat-History };
+=====================
+
+=====================
+Chat-Input :{ 
+=====================
+
+ ------------------------------------------ Todo --------------------------------------------------------
+
+    function (check : userChat?  legit : junk )-> {
+        1: create a function that checks the user input before sending to backend.
+    }instructions{
+        1 : User should not be able to send junk data -> function (userChat){ userChat == junk ? send : error} 
+    }done{
+        1 : not started
+    }
+
+=====================
+Chat-Input  };
+=====================
