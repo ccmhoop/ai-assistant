@@ -1,0 +1,27 @@
+=====================
+Chat history BUGS :{ 
+=====================
+
+    if (css chathistory-container : overflow-Y)-> {
+        1 : When a new message appear the page doesn't autoscroll to the newest message
+    }fix{
+        1 : https://stackoverflow.com/questions/70399819/how-to-auto-scroll-down-when-new-messages-added
+    }
+
+=====================
+Chat history BUGS };
+=====================
+
+=====================
+Chat Input BUGS :{ 
+=====================
+
+    if (css chat-message : when one charachter is spamed by user )-> {
+        1 : Visual Bug Chat history box overflows Example : [aaaaaaaaaaaa]aaaaaaaa
+    }fix{
+        1 : User should not be able to send junk data in the first place -> function (userChat){ userChat == junk ? send : error} 
+    }
+
+=====================
+Chat Input BUGS };
+=====================

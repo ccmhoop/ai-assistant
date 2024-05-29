@@ -33,7 +33,7 @@
 
 .user-textarea {
     font-family: 'Times New Roman', Times, serif;
-    font-size: large;
+    font-size: medium;
     border-style: hidden;
     outline: none;
     resize: none;
@@ -43,7 +43,6 @@
     display: flex;
     margin-top: .3em;
     overflow-y: scroll;
-    overflow-anchor: none;
 }
 
 .submit-button {
@@ -65,8 +64,6 @@
     margin-bottom: .3em;
 }
 
-.submit-button-active{
-    
+.submit-button-active {
     opacity: 1;
-
 }
