@@ -21,11 +21,12 @@ export default function App() {
         setUserChat,
       }}
     >
-      <div className="chat-bot-wrapper">
-        <div className="app-grid-1">
+      <div className="app-wrapper">
+        <header className="item-1">chadz</header>
+        <div className="item-2">
           <ChatHistoryComponent />
         </div>
-        <footer className="app-grid-2">
+        <footer className="item-3">
           <ChatInputComponent />
         </footer>
       </div>
