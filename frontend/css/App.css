@@ -2,18 +2,18 @@
   display: grid;
   grid-template-rows: 5%;
   grid-template-columns: 33% 33% 33%;
-  width: 100vw;
-  height: 98vh;
+  width: 99vw;
+  height: 99vh;
   background-color: rgb(255, 255, 255);
 }
 
-.item-1{
-grid-column: 1/6 ;
-text-align: center;
+.header.item-1 {
+  grid-column: 1/6;
+  text-align: center;
 }
 
-.item-2 {
-  grid-column: 2/3 ;
+.chat-history.item-2 {
+  grid-column: 2/3;
   position: relative;
   display: flex;
   z-index: 1;
@@ -25,9 +25,9 @@ text-align: center;
   margin-bottom: auto;
 }
 
-.item-3 {
+.chat-bar.item-3 {
   grid-row: 6/6;
-  grid-column: 2/3 ;
+  grid-column: 2/3;
   display: flex;
   align-items: center;
   justify-content: center;

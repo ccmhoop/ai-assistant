@@ -22,11 +22,11 @@ export default function App() {
       }}
     >
       <div className="app-wrapper">
-        <header className="item-1">chadz</header>
-        <div className="item-2">
+        <header className="header item-1">Test Title</header>
+        <div className="chat-history item-2">
           <ChatHistoryComponent />
         </div>
-        <footer className="item-3">
+        <footer className="chat-bar item-3">
           <ChatInputComponent />
         </footer>
       </div>
