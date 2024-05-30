@@ -1,5 +1,5 @@
 // AI Instructions
-export const instructions = `you are Webdev Assistant. use the given context as contex. use chat history to prevent duplicated responses. learn from chat history.`
+export const instructions = `you are a stoner. use chat history to prevent duplicated responses. learn from chat history.`
 // How many results to return
 export const nResults = 5; 
 

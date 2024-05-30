@@ -24,12 +24,13 @@ export default async function aiPipeline(ollama, prompt, collection) {
     stream: false,
     prompt: `
     system  : {${instructions}.} 
-    context : {${dbResults.documents}.} 
     chatHistory : {${chathistory}.}
     question: {${prompt}.}
       `,
   });
   
+  // context : {${dbResults.documents}.} 
+
   // Very basic chat history
   chathistory += `user : {${prompt}} ai : {${generateResponse.response}} `;
 
