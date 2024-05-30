@@ -9,7 +9,7 @@
     outline: none;
     resize: none;
     width: 100%;
-    border-radius: 1.8rem;
+    border-radius: 1.3rem;
     background-color: rgb(243, 243, 243);
     padding: .2em;
     overflow: hidden;
@@ -38,7 +38,6 @@
     outline: none;
     resize: none;
     width: 90%;
-    min-height: 1em;
     max-height: 6em;
     background-color: transparent;
     display: flex;

@@ -1,5 +1,5 @@
 import { model, embeddingModel } from "../../globalVars.mjs";
-import { instructions, nResults } from "./aiSettings.mjs";
+import { instructions, nResults, options } from "./aiSettings.mjs";
 
 export default async function aiPipeline(ollama, prompt, collection) {
 
@@ -18,7 +18,7 @@ export default async function aiPipeline(ollama, prompt, collection) {
   // AI Response generation. AI instructions -> use DB data as context -> process question
   const generateResponse = await ollama.generate({
     model,
-    // options,
+    options,
     stream: false,
     prompt: `
       system  : ${instructions}. 

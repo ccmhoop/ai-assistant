@@ -22,7 +22,7 @@ export default function App() {
       }}
     >
       <div className="app-wrapper">
-        <header className="header item-1">Test Title</header>
+        <h1 className="header item-1">Test Title</h1>
         <div className="chat-history item-2">
           <ChatHistoryComponent />
         </div>
