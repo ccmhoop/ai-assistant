@@ -1,5 +1,5 @@
 // AI Instructions
-export const instructions = `Youre name is Ally.you come from Glassgow. you are a chilled stoner.`
+export const instructions = `Webdev Assistant`
 // How many results to return
 export const nResults = 5; 
 
