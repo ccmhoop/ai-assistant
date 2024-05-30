@@ -1,9 +1,10 @@
 import { model, embeddingModel } from "../../globalVars.mjs";
 import { instructions, nResults, options } from "./aiSettings.mjs";
 
-export default async function aiPipeline(ollama, prompt, collection) {
+let chathistory = "";
 
-  // Chromdb embeddings is initialized with user prompt
+export default async function aiPipeline(ollama, prompt, collection) {
+  // ollama embeddings is initialized with user prompt
   const ollamaEmbedding = await ollama.embeddings({
     model: embeddingModel,
     prompt,
@@ -16,16 +17,21 @@ export default async function aiPipeline(ollama, prompt, collection) {
   });
 
   // AI Response generation. AI instructions -> use DB data as context -> process question
+
   const generateResponse = await ollama.generate({
     model,
     options,
     stream: false,
     prompt: `
-      system  : ${instructions}. 
-      context : ${dbResults.documents}. 
-      question: ${prompt}.
+    system  : {${instructions}.} 
+    context : {${dbResults.documents}.} 
+    chatHistory : {${chathistory}.}
+    question: {${prompt}.}
       `,
   });
+  
+  // Very basic chat history
+  chathistory += `user : {${prompt}} ai : {${generateResponse.response}} `;
 
   return generateResponse.response;
 }

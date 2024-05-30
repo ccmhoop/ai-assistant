@@ -44,7 +44,7 @@ const server = http.createServer(async (req, res) => {
         const { prompt } = JSON.parse(await getRequestBody(req));
         
         const response = await aiPipeline(ollama, prompt, collection);
-
+  
         res.end(JSON.stringify({ response }));
       } catch (error) {
         console.error("Error processing request:", error);
