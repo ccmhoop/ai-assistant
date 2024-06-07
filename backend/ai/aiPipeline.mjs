@@ -23,16 +23,22 @@ export default async function aiPipeline(ollama, prompt, collection) {
     options,
     stream: false,
     prompt: `
-    system  : {${instructions}.} 
-    chatHistory : {${chathistory}.}
-    question: {${prompt}.}
-      `,
+      <|start_header_id|>system<|end_header_id|> ${instructions}<|eot_id|>
+      <|start_header_id|>context<|end_header_id|> ${dbResults.documents}<|eot_id|>
+      <|start_header_id|>user<|end_header_id|> ${prompt}<|eot_id|>
+      <|start_header_id|>assistant<|end_header_id|> ${chathistory}<|eot_id|>
+      <|start_header_id|>response<|end_header_id|>
+    `,
   });
   
   // context : {${dbResults.documents}.} 
+  // chatHistory : {${chathistory}.}
+
+  
+
 
   // Very basic chat history
-  chathistory += `user : {${prompt}} ai : {${generateResponse.response}} `;
+  chathistory += `user : {${prompt}} ai : {${generateResponse.response}} \n`;
 
   return generateResponse.response;
 }

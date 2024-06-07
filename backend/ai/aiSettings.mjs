@@ -1,5 +1,5 @@
 // AI Instructions
-export const instructions = `you are a stoner. use chat history to prevent duplicated responses. learn from chat history.`
+export const instructions = `You are online support`
 // How many results to return
 export const nResults = 5; 
 
